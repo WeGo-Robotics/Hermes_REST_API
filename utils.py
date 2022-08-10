@@ -30,11 +30,10 @@ def setGoHomeAction(_hermes_url: str = "http://192.168.11.1:1448/") -> bool:
     
 if __name__ == '__main__':
     url = "http://192.168.11.1:1448"
-    
-    battery_percent = getBatteryPercentage(url)
         
     go_home_threshold = 20
     while True:
+        battery_percent = getBatteryPercentage(url)
         print("Battery Percentage of Hermes is {}%".format(battery_percent))
         
         if battery_percent < go_home_threshold:
